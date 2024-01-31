@@ -45,7 +45,8 @@ include_directories(
 )
 
 #自定义消息包
-find_package(msg_pkg REQUIRED)
+#find_package(msg_pkg REQUIRED)
+find_package(auto_aim_msg REQUIRED)
 #Opencv
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
@@ -65,10 +66,10 @@ add_library(myplugins SHARED src/yololayer.cu)
 target_link_libraries(myplugins nvinfer cudart)
 
 add_executable(testImagePublisher src/testImagePublisher.cpp )
-add_executable(testImageSubscriber src/testImageSubscriber.cpp ${YOLO})
+add_executable(testImageSubscriber src/testImageSubscriber.cpp  ${YOLO})
 
-ament_target_dependencies(testImagePublisher rclcpp sensor_msgs image_transport  cv_bridge OpenCV msg_pkg)
-ament_target_dependencies(testImageSubscriber rclcpp sensor_msgs image_transport  cv_bridge OpenCV msg_pkg)
+ament_target_dependencies(testImagePublisher rclcpp sensor_msgs image_transport  cv_bridge OpenCV auto_aim_msg)
+ament_target_dependencies(testImageSubscriber rclcpp sensor_msgs image_transport  cv_bridge OpenCV auto_aim_msg)
 
 #注入依赖
 target_link_libraries(testImageSubscriber nvinfer)
@@ -97,6 +98,10 @@ install(TARGETS
   testImagePublisher
   testImageSubscriber
   DESTINATION lib/${PROJECT_NAME}
+)
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()

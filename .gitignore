@@ -1,0 +1,47 @@
+# Build and install directories
+/build/
+/install/
+
+# Generated CMake build files
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+CMakeTmp/
+
+# Visual Studio Code settings
+.vscode/
+
+# Generated package files
+_build/
+_install/
+log/
+test_results/
+
+# ROS build files
+build/
+devel/
+
+# ROS logs and debug info
+logs/
+*.log
+*.db
+
+# Compiled C++ and Python files
+*.so
+*.dll
+*.pyc
+
+# Miscellaneous
+*~
+*.swp
+.DS_Store
+Thumbs.db
+#model
+
+*.png
+*.jpg
+*.jpeg
+
+*.wts
+*.pt
+*.engine

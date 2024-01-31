@@ -51,6 +51,9 @@ YoloTRT::~YoloTRT()
     delete engine;
     delete runtime;
 }
+std::map<int,std::string>YoloTRT::getlabels(){
+    return this->labels;
+}
 void YoloTRT::serializeEngine(const int &kBatchSize, std::string &wts_name, std::string &engine_name, std::string &sub_type)
 {
     nvinfer1::IBuilder *builder = nvinfer1::createInferBuilder(gLogger);
@@ -98,7 +101,7 @@ bool YoloTRT::setConfig(std::string InputName, std::string OutputName,
                         float NmsThresh, float ConfThresh,
                         int MaxInputImageSize, int MaxNumOutputBbox)
 {
-    std::cout << "InputName is:" << InputName << ",OutputName is:" << OutputName << "\n";
+    //std::cout << "InputName is:" << InputName << ",OutputName is:" << OutputName << "\n";
     localInputName = InputName, localOutputName = OutputName;
 
     kInputTensorName = localInputName.c_str();

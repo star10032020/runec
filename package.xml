@@ -3,7 +3,7 @@
 <package format="3">
   <name>runec</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>detect where is the rune</description>
   <maintainer email="1940574515@qq.com">ros</maintainer>
   <license>TODO: License declaration</license>
 
@@ -15,7 +15,7 @@
   <depend>OpenCV</depend>
   <depend>cv_bridge</depend>
 
-  <depend>msg_pkg</depend>
+  <depend>auto_aim_msg</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

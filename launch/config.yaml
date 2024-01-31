@@ -1,0 +1,12 @@
+/rune/testImageSubscriber:
+  ros__parameters:
+    wtsPath: "/workspace/model/Rune.wts" #节点启动时生效
+    enginePath: "/workspace/model/Rune.engine" #节点启动时生效
+    classPath: "/workspace/model/classes.txt" #节点启动时生效
+    modelType: "n" #节点启动时生效
+    NumClass: 3 #节点启动时生效
+    InputH: 640 #节点启动时生效
+    InputW: 640 #节点启动时生效
+    NmsThresh: 0.45 #回调函数时生效
+    ConfThresh: 0.5 #回调函数时生效
+    targetColor: 0 #回调函数时生效
