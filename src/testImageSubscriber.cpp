@@ -109,7 +109,7 @@ void ImageSubscriber::image_callback(
   this->bufdetect->newDetect(
       cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8)->image,
       ansList);
-  msg_Result->runes.clear();
+  msg_Result->armors.clear();
   msg_Result->header = msg->header; // 相机节点的header
   /*for(cv::Point item:ansList)
   {
@@ -177,7 +177,7 @@ void ImageSubscriber::image_callback(
       this->DebugSender(resultImg, "resultImg");
     }
 
-    msg_Result->runes.push_back(*msg_Detection);
+    msg_Result->armors.push_back(*msg_Detection);
   }
 
   publisher_->publish(*msg_Result);
